@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "202755998984",
+    "firebase_url": "https://flutter-prep-6f19c-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "flutter-prep-6f19c",
+    "storage_bucket": "flutter-prep-6f19c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:202755998984:android:b4b9426eb0aa2dff2d18bd",
+        "android_client_info": {
+          "package_name": "com.example.chat_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCODn0zGCemI0mBpjmMnuLgjkZLaUprGL4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:202755998984:android:158eb35d1acfa4ee2d18bd",
+        "android_client_info": {
+          "package_name": "com.kaleci.aistory"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCODn0zGCemI0mBpjmMnuLgjkZLaUprGL4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:202755998984:android:1b9566cd8ee24efc2d18bd",
+        "android_client_info": {
+          "package_name": "com.nazar.chat_service"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCODn0zGCemI0mBpjmMnuLgjkZLaUprGL4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

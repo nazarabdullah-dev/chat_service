@@ -1,0 +1,59 @@
+{
+  "appTitle": "chat_service",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "setting": "Pengaturan",
+  "@setting": {
+    "description": "The title of the setting"
+  },
+  "chat": "Obrolan",
+  "@chat": {
+    "description": "The title of the chat"
+  },
+  "no_new_message": "Tidak ada pesan baru",
+  "@no_new_message": {
+    "description": "The message when there is no new message"
+  },
+  "start_chat": "Mulai obrolan",
+  "@start_chat": {
+    "description": "The button to start chat"
+  },
+  "send": "Kirim pesan",
+  "@send": {
+    "description": "The button to send message"
+  },
+  "login": "Masuk",
+  "@login": {
+    "description": "The button to login"
+  },
+  "email": "Email",
+  "@email": {
+    "description": "The label of the email"
+  },
+  "password": "Password",
+  "@password": {
+    "description": "The label of the password"
+  },
+  "select_language": "Pilih Bahasa",
+  "@select_language": {
+    "description": "The title of the select language"
+  },
+  "english": "Inggris",
+  "@english": {
+    "description": "The title of the english"
+  },
+  "indonesian": "Indonesia",
+  "@indonesian": {
+    "description": "The title of the indonesian"
+  },
+  "use_device_locale": "Gunakan Bahasa Perangkat",
+  "@use_device_locale": {
+    "description": "The title of the use device locale"
+  },
+  "language": "Bahasa",
+  "@language": {
+    "description": "The title of the language"
+  }
+}
+

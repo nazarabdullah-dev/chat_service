@@ -1,0 +1,58 @@
+{
+  "appTitle": "chat_service",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "setting": "Setting",
+  "@setting": {
+    "description": "The title of the setting"
+  },
+  "chat": "Chat",
+  "@chat": {
+    "description": "The title of the chat"
+  },
+  "no_new_message": "No new message",
+  "@no_new_message": {
+    "description": "The message when there is no new message"
+  },
+  "start_chat": "Start chat",
+  "@start_chat": {
+    "description": "The button to start chat"
+  },
+  "send": "Send a message",
+  "@send": {
+    "description": "The button to send message"
+  },
+  "login": "Login",
+  "@login": {
+    "description": "The button to login"
+  },
+  "email": "Email",
+  "@email": {
+    "description": "The label of the email"
+  },
+  "password": "Password",
+  "@password": {
+    "description": "The label of the password"
+  },
+  "select_language": "Select Language",
+  "@select_language": {
+    "description": "The title of the select language"
+  },
+  "english": "English",
+  "@english": {
+    "description": "The title of the english"
+  },
+  "indonesian": "Indonesian",
+  "@indonesian": {
+    "description": "The title of the indonesian"
+  },
+  "use_device_locale": "Use Device Locale",
+  "@use_device_locale": {
+    "description": "The title of the use device locale"
+  },
+  "language": "Language",
+  "@language": {
+    "description": "The title of the language"
+  }
+}
