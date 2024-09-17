@@ -1,6 +1,7 @@
 import 'package:chat_service/src/data/cubit/chat_cubit.dart';
 import 'package:chat_service/src/data/repository/login_repository.dart';
 import 'package:chat_service/src/data/repository/message_repository.dart';
+import 'package:chat_service/src/data/state/chat_state.dart';
 import 'package:chat_service/src/di/dependency_injection.dart';
 import 'package:chat_service/src/util/screen_util.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,6 @@ class ChatScreenWidget extends StatefulWidget {
 }
 
 class _ChatScreenWidgetState extends State<ChatScreenWidget> {
-  final List<String> _messages = [];
   final TextEditingController _textController = TextEditingController();
 
   @override

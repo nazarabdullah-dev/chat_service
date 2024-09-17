@@ -1,9 +1,11 @@
 import 'package:chat_service/src/data/cubit/login_cubit.dart';
 import 'package:chat_service/src/data/repository/login_repository.dart';
+import 'package:chat_service/src/data/state/login_state.dart';
 import 'package:chat_service/src/di/dependency_injection.dart';
 import 'package:chat_service/src/presentation/chat_screen.dart';
 import 'package:chat_service/src/presentation/setting_screen.dart';
 import 'package:chat_service/src/util/screen_util.dart';
+import 'package:chat_service/src/widgets/form_login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -54,6 +56,12 @@ class HomeScreenWidgetState extends State<HomeScreenWidget> {
                 },
                 icon: const Icon(Icons.settings),
               ),
+              IconButton(
+                onPressed: () {
+                  context.read<LoginCubit>().signOut();
+                },
+                icon: const Icon(Icons.logout),
+              ),
             ],
           ),
           body: Row(
@@ -71,52 +79,11 @@ class HomeScreenWidgetState extends State<HomeScreenWidget> {
                       child: BlocBuilder<LoginCubit, LoginState>(
                           builder: (context, state) {
                         if (state.user != null) {
-                          return Center(
-                            child: ElevatedButton(
-                              onPressed: () {
-                                if (ScreenUtil.isTablet(context)) {
-                                  setState(() {
-                                    openChat = true;
-                                  });
-                                } else {
-                                  Navigator.pushNamed(
-                                      context, ChatScreen.routeName);
-                                }
-                              },
-                              child: Text(
-                                  AppLocalizations.of(context)!.start_chat),
-                            ),
-                          );
+                          return buttonStart(context);
                         }
-                        return Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            TextField(
-                              controller: _emailController,
-                              decoration: InputDecoration(
-                                  labelText:
-                                      AppLocalizations.of(context)!.email),
-                              keyboardType: TextInputType.emailAddress,
-                            ),
-                            const SizedBox(height: 16),
-                            TextField(
-                              controller: _passwordController,
-                              decoration: InputDecoration(
-                                  labelText:
-                                      AppLocalizations.of(context)!.password),
-                              obscureText: true,
-                            ),
-                            const SizedBox(height: 24),
-                            ElevatedButton(
-                              onPressed: () =>
-                                  context.read<LoginCubit>().signIn(
-                                        email: _emailController.text,
-                                        password: _passwordController.text,
-                                      ),
-                              child: Text(AppLocalizations.of(context)!.login),
-                            ),
-                          ],
-                        );
+                        return FormLogin(
+                            emailController: _emailController,
+                            passwordController: _passwordController);
                       }),
                     ),
                   ),
@@ -126,5 +93,22 @@ class HomeScreenWidgetState extends State<HomeScreenWidget> {
             ],
           ),
         ));
+  }
+
+  Center buttonStart(BuildContext context) {
+    return Center(
+      child: ElevatedButton(
+        onPressed: () {
+          if (ScreenUtil.isTablet(context)) {
+            setState(() {
+              openChat = true;
+            });
+          } else {
+            Navigator.pushNamed(context, ChatScreen.routeName);
+          }
+        },
+        child: Text(AppLocalizations.of(context)!.start_chat),
+      ),
+    );
   }
 }

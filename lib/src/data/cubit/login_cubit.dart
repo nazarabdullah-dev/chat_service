@@ -1,35 +1,7 @@
 import 'package:chat_service/src/data/repository/login_repository.dart';
+import 'package:chat_service/src/data/state/login_state.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:equatable/equatable.dart';
-
-// Define LoginState
-class LoginState extends Equatable {
-  final bool isLoading;
-  final User? user;
-  final String? error;
-
-  const LoginState({
-    this.isLoading = false,
-    this.user,
-    this.error,
-  });
-
-  LoginState copyWith({
-    bool? isLoading,
-    User? user,
-    String? error,
-  }) {
-    return LoginState(
-      isLoading: isLoading ?? this.isLoading,
-      user: user ?? this.user,
-      error: error ?? this.error,
-    );
-  }
-
-  @override
-  List<Object?> get props => [isLoading, user, error];
-}
 
 // Define LoginCubit
 class LoginCubit extends Cubit<LoginState> {

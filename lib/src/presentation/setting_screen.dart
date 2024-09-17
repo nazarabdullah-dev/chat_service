@@ -23,54 +23,50 @@ class SettingScreen extends StatelessWidget {
                 subtitle: Text(state.locale.languageCode),
                 trailing: const Icon(Icons.arrow_forward_ios),
                 onTap: () {
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                        title:
-                            Text(AppLocalizations.of(context)!.select_language),
-                        content: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            ListTile(
-                              title:
-                                  Text(AppLocalizations.of(context)!.english),
-                              onTap: () {
-                                context
-                                    .read<LocaleCubit>()
-                                    .changeLocale(const Locale('en'));
-                                Navigator.pop(context);
-                              },
-                            ),
-                            ListTile(
-                              title: Text(
-                                  AppLocalizations.of(context)!.indonesian),
-                              onTap: () {
-                                context
-                                    .read<LocaleCubit>()
-                                    .changeLocale(const Locale('id'));
-                                Navigator.pop(context);
-                              },
-                            ),
-                            ListTile(
-                              title: Text(AppLocalizations.of(context)!
-                                  .use_device_locale),
-                              onTap: () {
-                                context.read<LocaleCubit>().useDeviceLocale();
-                                Navigator.pop(context);
-                              },
-                            ),
-                          ],
-                        ),
-                      );
-                    },
-                  );
+                  showLanguageDialog(context);
                 },
               ),
             ],
           );
         },
       ),
+    );
+  }
+
+  Future<dynamic> showLanguageDialog(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(AppLocalizations.of(context)!.select_language),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ListTile(
+                title: Text(AppLocalizations.of(context)!.english),
+                onTap: () {
+                  context.read<LocaleCubit>().changeLocale(const Locale('en'));
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                title: Text(AppLocalizations.of(context)!.indonesian),
+                onTap: () {
+                  context.read<LocaleCubit>().changeLocale(const Locale('id'));
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                title: Text(AppLocalizations.of(context)!.use_device_locale),
+                onTap: () {
+                  context.read<LocaleCubit>().useDeviceLocale();
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
