@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 class PrefManager {
   static const String _localeKey = 'locale';
-  static const String _localeModeKey = 'locale_mode';
 
   static Future<void> setLocale(Locale locale) async {
     final prefs = await SharedPreferences.getInstance();
